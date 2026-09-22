@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Collection — Elysian Shades</title>
+<meta name="description" content="Browse the current Elysian Shades edit and reserve your pair by WhatsApp or email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="preloader" class="done"></div>
+<div id="pageWipe"></div>
+
+<header class="nav" id="siteNav">
+  <a href="index.html" class="brand" data-transition>
+    <svg class="brand-mark" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/><circle cx="20" cy="20" r="10"/></svg>
+    <span class="brand-word">Elysian <span>Shades</span></span>
+  </a>
+  <nav class="links" id="navLinks">
+    <a href="index.html" data-transition>Home</a>
+    <a href="shop.html" class="current">Collection</a>
+    <a href="index.html#essence" data-transition>Essence</a>
+    <a href="index.html#contact" data-transition>Contact</a>
+    <a href="#" class="nav-cta" onclick="document.getElementById('shopGrid').scrollIntoView({behavior:'smooth'}); return false;">Reserve a Pair</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+</header>
+
+<section class="shop-header wrap">
+  <div class="eyebrow">The Full Edit</div>
+  <h1>Every frame, <em>this season.</em></h1>
+  <p>Tap Reserve on any pair to hold it by WhatsApp or email — no account, no cart, no waiting on a confirmation page.</p>
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px;">
+  <div class="wrap">
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-word">Elysian <span style="color:var(--gold);">Shades</span></span>
+        <p>A small eyewear house building frames worth the golden hour. Reservations close as each edit sells out.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Reach Us</h4>
+        <a href="https://wa.me/2348000000000" target="_blank" rel="noopener">WhatsApp: +234 800 000 0000</a>
+        <a href="mailto:hello@elysianshades.com">hello@elysianshades.com</a>
+        <p>Lagos, Nigeria</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="index.html" data-transition>Home</a>
+        <a href="shop.html">Collection</a>
+        <a href="index.html#essence" data-transition>Essence</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year"></span> Elysian Shades. All rights reserved.</span>
+      <span>Every pair reserved by hand — not by cart.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-eyebrow">Reserve This Pair</div>
+    <h3 id="modalProductName">Product Name</h3>
+    <div class="modal-price" id="modalProductPrice">₦0</div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-tab="wa">WhatsApp</button>
+      <button class="modal-tab" data-tab="email">Email</button>
+    </div>
+    <div class="tab-panel active" id="tab-wa">
+      <p>Tap below to open WhatsApp with your reservation details already filled in — just hit send.</p>
+      <a href="#" class="wa-link" id="waLink" target="_blank" rel="noopener">Reserve on WhatsApp</a>
+    </div>
+    <div class="tab-panel" id="tab-email">
+      <p>Prefer email? Send us your details and we'll confirm your reservation.</p>
+      <form id="emailForm">
+        <div class="field"><label for="fName">Full name</label><input type="text" id="fName" name="name" required></div>
+        <div class="field"><label for="fPhone">Phone number</label><input type="tel" id="fPhone" name="phone" required></div>
+        <div class="field"><label for="fMessage">Message</label><textarea id="fMessage" name="message" required></textarea></div>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" id="fSubject" value="">
+        <button type="submit" class="submit-email" id="submitBtn">Send Reservation</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
