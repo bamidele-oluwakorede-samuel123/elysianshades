@@ -339,7 +339,7 @@ emailForm.addEventListener('submit', async function(e){
   formStatus.className = 'form-status';
 
   const formData = new FormData(emailForm);
-  const accessKey = formData.get('access_key');
+  const accessKey = formData.get('6c6404c3-3678-4ab0-b1df-923fa58acb8a');
 
   if(!accessKey || accessKey === '6c6404c3-3678-4ab0-b1df-923fa58acb8a'){
     formStatus.textContent = "Email booking isn't set up yet — the site owner needs to add a Web3Forms access key.";
