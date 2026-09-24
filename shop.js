@@ -341,7 +341,7 @@ emailForm.addEventListener('submit', async function(e){
   const formData = new FormData(emailForm);
   const accessKey = formData.get('access_key');
 
-  if(!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE'){
+  if(!accessKey || accessKey === '6c6404c3-3678-4ab0-b1df-923fa58acb8a'){
     formStatus.textContent = "Email booking isn't set up yet — the site owner needs to add a Web3Forms access key.";
     formStatus.className = 'form-status err';
     submitBtn.disabled = false;
